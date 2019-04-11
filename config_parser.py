@@ -134,14 +134,3 @@ class Config:
             for key in self.data:
                 f.write('{0} = {1}\n'.format(key, self.data[key]))
 
-
-if __name__ == '__main__':
-    cfg = Config()
-    cfg.new_conf('key1', 'hello')  # This will create and save.
-    cfg.new_conf('key1', 'hello again?')  # This will do nothing, but expect an error message.
-    cfg.new_conf('key2', ', or not!')
-    cfg.edit_conf('key2', ', world!')
-    cfg.remove_conf('key2')
-    cfg.save_conf()
-
-    print(cfg.data)
